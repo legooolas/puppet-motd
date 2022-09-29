@@ -1,16 +1,16 @@
 {
-  "name": "jgazeley-motd",
-  "version": "0.2.4",
-  "author": "jgazeley",
+  "name": "puppet-motd",
+  "version": "0.3.0",
+  "author": "legooolas",
   "summary": "Manage the MOTD message",
   "license": "Apache-2.0",
-  "source": "https://github.com/djjudas21/puppet-motd",
-  "project_page": "https://github.com/djjudas21/puppet-motd",
-  "issues_url": "https://github.com/djjudas21/puppet-motd/issues",
+  "source": "https://github.com/legooolas/puppet-motd",
+  "project_page": "https://github.com/legooolas/puppet-motd",
+  "issues_url": "https://github.com/legooolas/puppet-motd/issues",
   "dependencies": [
     {
       "name": "puppetlabs/concat",
-      "version_requirement": ">= 1.2.1 < 2.0.0"
+      "version_requirement": ">= 1.2.1 < 8.0.0"
     },
     {
       "name": "puppetlabs/stdlib",
@@ -22,20 +22,31 @@
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
         "6",
-        "7"
+        "7",
+        "8"
       ]
     },
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "7"
+        "10",
+        "11"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "16.04",
+        "18.04",
+        "20.04",
+        "22.04"
       ]
     }
   ],
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": "3.x"
+      "version_requirement": ">= 5.5"
     }
   ],
   "pdk-version": "2.5.0",
