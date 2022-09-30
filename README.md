@@ -156,3 +156,8 @@ Quote numbers for future parser validation
 ### `0.2.4`
 
 Access variables properly
+
+### `0.3.0`
+
+Add `order` to concat used in `motd::register` defined type, to fix ordering
+Add Puppet 4.x types on parameters

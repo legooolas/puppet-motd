@@ -1,15 +1,15 @@
 # Install our standard MOTD on a box
 class motd (
-  $path = '/etc/motd',
-  $display_hostname = true,
-  $display_puppet_warning = true,
-  $display_puppet_env = false,
-  $display_qotd = false,
-  $contact_email = undef,
-  $qotd_text = undef,
-  $qotd_author = undef,
-  $char = '*',
-  $width = 80,
+  String                 $path                   = '/etc/motd',
+  Boolean                $display_hostname       = true,
+  Boolean                $display_puppet_warning = true,
+  Boolean                $display_puppet_env     = false,
+  Boolean                $display_qotd           = false,
+  Variant[String, Undef] $contact_email          = undef,
+  Variant[String, Undef] $qotd_text              = undef,
+  Variant[String, Undef] $qotd_author            = undef,
+  String[1,1]            $char                   = '*',
+  Integer                $width                  = 80,
 ) {
 
 # Example dimensions
