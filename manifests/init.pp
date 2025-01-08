@@ -44,7 +44,7 @@ class motd (
   }
 
   # Contact info
-  if (is_string($contact_email)) {
+  if ($contact_email =~ String[1]) {
     $email_sprint = sprintf("%-${printwidth}s", "Queries about this system to: ${contact_email}")
     concat::fragment { 'motd_email':
       target  => $path,
@@ -55,7 +55,7 @@ class motd (
 
   # Hostname
   if ($display_hostname) {
-    $upfqdn = upcase($::fqdn)
+    $upfqdn = upcase($facts['networking']['fqdn'])
     $fqdn_sprint = sprintf("%-${printwidth}s", $upfqdn)
     concat::fragment { 'motd_fqdn':
       target  => $path,
@@ -109,6 +109,6 @@ class motd (
   concat::fragment { 'motd_footer':
     target  => $path,
     content => "${blank}${edge}\n",
-    order   => '20',
+    order   => '99',
   }
 }
