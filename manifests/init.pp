@@ -18,7 +18,7 @@ class motd (
 # **************************
 
   # Check we're only using a single character to draw the box
-  validate_slength($char, 1, 1)
+  assert_type(String[1,1], $char)
 
   $boxwidth = $width - 2
   $printwidth = $boxwidth - 8
@@ -86,8 +86,8 @@ class motd (
 
   # Quote of the day
   if ($display_qotd) {
-    validate_string($qotd_text)
-    validate_string($qotd_author)
+    assert_type(String[1], $qotd_text)
+    assert_type(String[1], $qotd_author)
     $qotd_text_sprint = sprintf("%-${printwidth}s", "\"${qotd_text}\"")
     $qotd_author_sprint = sprintf("%-${printwidth}s", "       ${qotd_author}")
     concat::fragment { 'motd_qotd':
