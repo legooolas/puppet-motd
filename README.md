@@ -161,3 +161,8 @@ Access variables properly
 
 Add `order` to concat used in `motd::register` defined type, to fix ordering
 Add Puppet 4.x types on parameters
+
+### `1.0.0`
+
+Support Puppet 8.x and stdlib >= 9.0.0 -- various `validate` functions removed from stdlib.
+
